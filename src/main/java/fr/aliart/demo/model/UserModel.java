@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "demo_users", catalog = "demo_db")
-public class DemoUserModel {
+public class UserModel {
 
     @Id
     @Column(name = "id_user")
@@ -17,7 +17,7 @@ public class DemoUserModel {
     @Column(name = "last_name")
     private String lastName;
 
-    public DemoUserModel() {
+    public UserModel() {
     }
 
     public Integer getId() {

@@ -2,12 +2,12 @@ package fr.aliart.demo.dao.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import fr.aliart.demo.model.DemoUserModel;
+import fr.aliart.demo.model.UserModel;
 
 import java.util.List;
 
-public interface DemoUserRepository extends JpaRepository<DemoUserModel, Integer> {
+public interface DemoUserRepository extends JpaRepository<UserModel, Integer> {
 	
-	 List<DemoUserModel> findByFirstName(String firstName);
+	 List<UserModel> findByFirstName(String firstName);
 	 
 }

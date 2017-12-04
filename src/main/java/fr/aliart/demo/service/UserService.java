@@ -1,5 +1,5 @@
 package fr.aliart.demo.service;
 
-public class DemoUserService {
+public class UserService {
 
 }
