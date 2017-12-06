@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @EnableAutoConfiguration
-@RequestMapping(value = "/demo/sayhello")
+@RequestMapping(value = "/")
 public class DemoController {
 	
     public String helloWorld(ModelMap model) {

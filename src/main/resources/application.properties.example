@@ -6,6 +6,11 @@ spring.datasource.password = s3cr3t
 spring.datasource.testWhileIdle = true
 spring.datasource.validationQuery = SELECT 1
 
+server.contextPath=/demo-spring-boot
+
+#following article for set base url different for rest controller
+#https://stackoverflow.com/questions/32927937/how-to-set-base-url-for-rest-in-spring-boot
+
 # Show or not log for each sql query
 spring.jpa.show-sql = true
 

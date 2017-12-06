@@ -3,40 +3,40 @@ package fr.aliart.demo.rest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import fr.aliart.demo.dao.repository.DemoUserRepository;
 import fr.aliart.demo.model.UserModel;
+import fr.aliart.demo.service.UserService;
 
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/demo/rest//user")
+@RequestMapping(value = "/rest/user")
 public class UserRestController {
 
     @Autowired
-    DemoUserRepository demoUserRepository;
+    UserService userService;
 
     @GetMapping("/all")
     public List<UserModel> getAll() {
-        return demoUserRepository.findAll();
+        return userService.findAll();
     }
 
     @GetMapping("/{name}")
     public List<UserModel> getUser(@PathVariable("name") final String firstName) {
-        return demoUserRepository.findByFirstName(firstName);
+        return userService.findByFirstName(firstName);
 
     }
 
     @GetMapping("/id/{id}")
-    public UserModel getId(@PathVariable("id") final Integer id) {
-        return demoUserRepository.findOne(id);
+    public UserModel getId(@PathVariable("id") final Long id) {
+        return userService.findOne(id);
     }
 
     @GetMapping("/update/{id}/{name}")
-    public UserModel update(@PathVariable("id") final Integer id, @PathVariable("firstName") final String firstName) {
+    public UserModel update(@PathVariable("id") final Long id, @PathVariable("firstName") final String firstName) {
 
-    	UserModel users = getId(id);
-        users.setFirstName(firstName);
+    	UserModel user = getId(id);
+        user.setFirstName(firstName);
 
-        return demoUserRepository.save(users);
+        return userService.save(user);
     }
 }
