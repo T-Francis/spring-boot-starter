@@ -29,6 +29,5 @@ public class UserService implements UserServiceInterface{
 	public UserModel save(UserModel user) {
 		return userDao.save(user);
 	}
-
 	
 }
