@@ -4,6 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ForeignKey;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -25,6 +27,7 @@ public class CommentModel implements java.io.Serializable {
     }
 	
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_comment")
 	public Long getIdComment() {
 		return idComment;
@@ -52,7 +55,7 @@ public class CommentModel implements java.io.Serializable {
 		this.content = content;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY,optional=false)
 	@JoinColumn(name = "id_user", foreignKey=@ForeignKey(name="FK_comments_id_user"))
 	@JsonIgnoreProperties("user")
 	public UserModel getUser() {
@@ -63,7 +66,7 @@ public class CommentModel implements java.io.Serializable {
 		this.user = user;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY,optional=false)
 	@JoinColumn(name = "id_post", foreignKey=@ForeignKey(name="FK_comments_id_post"))
 	@JsonIgnoreProperties("post")
 	public PostModel getPost() {

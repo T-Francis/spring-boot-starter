@@ -17,21 +17,21 @@ public class UserService {
     public UserService() {
     }
 
-	public List<UserModel> findAll() {
-		return userDao.findAll();
-	}
-	
-	public UserModel findOne(Long id) {
-		return userDao.findOne(id);
-	}
-
-	public List<UserModel> findByFirstName(String firstName) {
-		return userDao.findByFirstName(firstName);
-	}
-
-	public UserModel save(UserModel user) {
-		return userDao.save(user);
-	}
+//	public List<UserModel> findAll() {
+//		return userDao.findAll();
+//	}
+//	
+//	public UserModel findOne(Long id) {
+//		return userDao.findOne(id);
+//	}
+//
+//	public List<UserModel> findByFirstName(String firstName) {
+//		return userDao.findByFirstName(firstName);
+//	}
+//
+//	public UserModel save(UserModel user) {
+//		return userDao.save(user);
+//	}
 
 	
 }

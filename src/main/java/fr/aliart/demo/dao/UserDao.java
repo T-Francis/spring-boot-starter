@@ -17,20 +17,20 @@ public class UserDao {
     public UserDao() {
     }
 
-	public List<UserModel> findAll() {
-    	return userRepository.findAll();
-	}
-
-	public UserModel findOne(Long id) {
-    	return userRepository.findOne(id);
-	}
-	
-	public List<UserModel> findByFirstName(String firstName) {
-    	return userRepository.findByFirstName(firstName);
-	}
-	
-	public UserModel save(UserModel user) {
-    	return userRepository.save(user);
-	}
+//	public List<UserModel> findAll() {
+//    	return userRepository.findAll();
+//	}
+//
+//	public UserModel findOne(Long id) {
+//    	return userRepository.findOnebyIdUser(id);
+//	}
+//	
+//	public List<UserModel> findByFirstName(String firstName) {
+//    	return userRepository.findByFirstName(firstName);
+//	}
+//	
+//	public UserModel save(UserModel user) {
+//    	return userRepository.save(user);
+//	}
 	
 }

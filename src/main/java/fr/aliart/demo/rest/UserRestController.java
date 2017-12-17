@@ -15,28 +15,28 @@ public class UserRestController {
     @Autowired
     UserService userService;
 
-    @GetMapping("/all")
-    public List<UserModel> getAll() {
-        return userService.findAll();
-    }
-
-    @GetMapping("/{name}")
-    public List<UserModel> getUser(@PathVariable("name") final String firstName) {
-        return userService.findByFirstName(firstName);
-
-    }
-
-    @GetMapping("/id/{id}")
-    public UserModel getId(@PathVariable("id") final Long id) {
-        return userService.findOne(id);
-    }
-
-    @GetMapping("/update/{id}/{name}")
-    public UserModel update(@PathVariable("id") final Long id, @PathVariable("firstName") final String firstName) {
-
-    	UserModel user = getId(id);
-        user.setFirstName(firstName);
-
-        return userService.save(user);
-    }
+//    @GetMapping("/all")
+//    public List<UserModel> getAll() {
+//        return userService.findAll();
+//    }
+//
+//    @GetMapping("/{name}")
+//    public List<UserModel> getUser(@PathVariable("name") final String firstName) {
+//        return userService.findByFirstName(firstName);
+//
+//    }
+//
+//    @GetMapping("/id/{id}")
+//    public UserModel getId(@PathVariable("id") final Long id) {
+//        return userService.findOne(id);
+//    }
+//
+//    @GetMapping("/update/{id}/{name}")
+//    public UserModel update(@PathVariable("id") final Long id, @PathVariable("firstName") final String firstName) {
+//
+//    	UserModel user = getId(id);
+//        user.setFirstName(firstName);
+//
+//        return userService.save(user);
+//    }
 }

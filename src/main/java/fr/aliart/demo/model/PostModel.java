@@ -4,9 +4,12 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ForeignKey;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -26,7 +29,8 @@ public class PostModel implements java.io.Serializable {
     }
 	
     @Id
-    @Column(name = "id_post")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_post",updatable = false, nullable = false)
 	public Long getIdPost() {
 		return idPost;
 	}
@@ -62,7 +66,7 @@ public class PostModel implements java.io.Serializable {
 		this.content = content;
 	}
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY,optional=false)
 	@JoinColumn(name = "id_user", foreignKey=@ForeignKey(name="FK_posts_id_user"))
 	@JsonIgnoreProperties("user")
 	public UserModel getUser() {
@@ -73,9 +77,8 @@ public class PostModel implements java.io.Serializable {
 		this.user = user;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "id_post", foreignKey=@ForeignKey(name="FK_posts_id_category"))
-	@JsonIgnoreProperties("category")
+	@ManyToOne(fetch = FetchType.LAZY,optional=false)
+	@JoinColumn(name = "id_category", foreignKey=@ForeignKey(name="FK_posts_id_category"))
 	public CategoryModel getCategory() {
 		return category;
 	}

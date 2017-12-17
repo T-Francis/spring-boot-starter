@@ -9,12 +9,12 @@ import java.util.List;
 @Repository
 public interface UserRepository extends JpaRepository<UserModel, Long> {
 	
-	 List<UserModel> findAll();
-	 
-	 UserModel findOne(Integer idUser);	
-	
-	 List<UserModel> findByFirstName(String firstName);
-	 
-	 UserModel save(UserModel user);
+//	 List<UserModel> findAll();
+//	 
+//	 UserModel findOnebyIdUser(Long id);	
+//	
+//	 List<UserModel> findByFirstName(String firstName);
+//	 
+//	 UserModel save(UserModel user);
 	 
 }
