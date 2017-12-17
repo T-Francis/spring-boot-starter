@@ -7,9 +7,10 @@ import org.springframework.stereotype.Service;
 
 import fr.aliart.demo.dao.UserDao;
 import fr.aliart.demo.model.UserModel;
+import fr.aliart.demo.service.interfaces.UserServiceInterface;
 
 @Service
-public class UserService {
+public class UserService implements UserServiceInterface{
 	
 	@Autowired
 	UserDao userDao;
@@ -17,21 +18,17 @@ public class UserService {
     public UserService() {
     }
 
-//	public List<UserModel> findAll() {
-//		return userDao.findAll();
-//	}
-//	
-//	public UserModel findOne(Long id) {
-//		return userDao.findOne(id);
-//	}
-//
-//	public List<UserModel> findByFirstName(String firstName) {
-//		return userDao.findByFirstName(firstName);
-//	}
-//
-//	public UserModel save(UserModel user) {
-//		return userDao.save(user);
-//	}
+	public List<UserModel> findAll() {
+		return userDao.findAll();
+	}  
+	
+	public List<UserModel> findByFirstName(String firstName) {
+		return userDao.findByFirstName(firstName);
+	}
+
+	public UserModel save(UserModel user) {
+		return userDao.save(user);
+	}
 
 	
 }
